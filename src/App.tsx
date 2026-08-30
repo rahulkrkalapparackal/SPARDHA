@@ -135,7 +135,7 @@ function App() {
     <div ref={pageRef} className="site-shell">
       <header className="site-header">
         <button className="brand" onClick={() => scrollTo('home')} aria-label="Back to top">
-          <img src="/images/image.png" alt="Spardha logo" />
+          <img src={`${import.meta.env.BASE_URL}images/image.png`} alt="Spardha logo" />
           <span>SPARDHA<span className="brand-year"> 3.0</span></span>
         </button>
         <nav className={menuOpen ? 'main-nav is-open' : 'main-nav'}>
@@ -184,7 +184,7 @@ function App() {
           <div className="hero-art">
             <div className="hero-orbit orbit-one" />
             <div className="hero-orbit orbit-two" />
-            <div className="hero-mark"><img src="/images/image.png" alt="" /></div>
+            <div className="hero-mark"><img src={`${import.meta.env.BASE_URL}images/image.png`} alt="" /></div>
             <span className="art-note note-top">National level</span>
             <span className="art-note note-side">Inter-collegiate<br />fest</span>
             <span className="art-number">3.0</span>
@@ -280,7 +280,7 @@ function App() {
 
         <section className="final-section">
           <div className="final-content">
-            <div className="final-logo"><img src="/images/image.png" alt="Spardha" /></div>
+            <div className="final-logo"><img src={`${import.meta.env.BASE_URL}images/image.png`} alt="Spardha" /></div>
             <p className="eyebrow"><span className="eyebrow-line" /> 29 — 30 / 09 / 26 · Kochi, Kerala</p>
             <h2>See you<br /><span>in the arena.</span></h2>
             <button className="button button-dark" onClick={() => setRegisterOpen(true)}>Register now <ArrowRight size={17} /></button>
@@ -288,8 +288,7 @@ function App() {
         </section>
       </main>
 
-      <footer className="site-footer"><div className="footer-brand"><img src="/images/image.png" alt="" /><span>SPARDHA 3.0</span></div><div className="footer-contact"><span><Mail size={14} /> spardhacbs@gmail.com</span><span><Phone size={14} /> +91 83045 90075</span></div><div className="footer-social"><a href="https://instagram.com" aria-label="Instagram"><Instagram size={17} /></a><button onClick={() => scrollTo('home')}>Back to top <ArrowDown size={15} /></button></div></footer>
-
+      <footer className="site-footer"><div className="footer-brand"><img src={`${import.meta.env.BASE_URL}images/image.png`} alt="" /><span>SPARDHA 3.0</span></div><div className="footer-contact">
       {registerOpen && <div className="modal-backdrop" role="presentation" onClick={() => setRegisterOpen(false)}><div className="register-modal" role="dialog" aria-modal="true" aria-labelledby="register-title" onClick={(event) => event.stopPropagation()}><button className="modal-close" onClick={() => setRegisterOpen(false)} aria-label="Close registration"><X size={20} /></button><p className="eyebrow"><span className="eyebrow-line" /> Your move</p><h2 id="register-title">Ready to<br /><em>play?</em></h2><p>Leave your details and the Spardha team will get you in the game.</p><form onSubmit={(event) => { event.preventDefault(); setRegisterOpen(false); }}><label>Full name<input required placeholder="Your name" /></label><label>Email address<input required type="email" placeholder="you@example.com" /></label><label>Choose your interest<select defaultValue=""><option value="" disabled>Select one</option>{events.map((event) => <option key={event.name}>{event.name}</option>)}<option>Partnerships</option></select></label><button className="button button-dark" type="submit">Send it <ArrowRight size={17} /></button></form></div></div>}
     </div>
   );
