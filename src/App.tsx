@@ -135,7 +135,7 @@ function App() {
     <div ref={pageRef} className="site-shell">
       <header className="site-header">
         <button className="brand" onClick={() => scrollTo('home')} aria-label="Back to top">
-          <img src={`${import.meta.env.BASE_URL}images/image.png`} alt="Spardha logo" />
+          <img src={`${import.meta.env.BASE_URL}images/image.png`} alt="Spardha" />
           <span>SPARDHA<span className="brand-year"> 3.0</span></span>
         </button>
         <nav className={menuOpen ? 'main-nav is-open' : 'main-nav'}>
